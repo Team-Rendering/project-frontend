@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect, useParams } from 'react-router-dom'
+import { Link, Redirect, useParams } from 'react-router-dom'
 import { Spinner, Button } from 'react-bootstrap'
-// import { deletePost } from '../../api/post'
-
 import { deletePost, showPost } from '../../api/post'
 
-const OnePost = ({ user, msgAlert }) => {
+const Post = ({ user, msgAlert }) => {
   const [post, setPost] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { id } = useParams()
@@ -26,7 +24,7 @@ const OnePost = ({ user, msgAlert }) => {
         setPost(res.data.post)
       } catch (error) {
         msgAlert({
-          heading: 'Post failed to load',
+          heading: 'Post failed to load this Post.js Error)',
           message: error.message,
           variant: 'danger'
         })
@@ -41,7 +39,7 @@ const OnePost = ({ user, msgAlert }) => {
       setDeleted(true)
     } catch (error) {
       msgAlert({
-        heading: 'Failed to delete post',
+        heading: 'Failed to delete Post',
         message: error.message,
         variant: 'danger'
       })
@@ -59,21 +57,21 @@ const OnePost = ({ user, msgAlert }) => {
   } else if (deleted) {
     return <Redirect to='/posts' />
   } else {
-    // We have a movie, display it!
+    // We have a post, display it!
     return (
       <div className='row'>
         <div className='col-sm-10 col-md-8 mx-auto mt-5'>
           <h3>{post.title}</h3>
-          <p>Post : {post.text}</p>
-          <p>Photo : {post.photo}</p>
+          <p>You changed your mind?💭: {post.text}</p>
+          <p>Upload Photo: {post.photo}</p>
           <Button variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
-          {/* <Link to={`/posts/${id}/edit`}>
+          <Link to={`/posts/${id}/edit`}>
             <Button variant='primary' type='submit'>Update Post</Button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     )
   }
 }
 
-export default OnePost
+export default Post

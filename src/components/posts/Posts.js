@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { indexPost } from '../../api/post'
 import { Link, Redirect } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
-// import BookCreate from './BookCreate'
 
-const IndexPosts = ({ user, msgAlert }) => {
-  const [posts, setPost] = useState([])
+const Posts = ({ user, msgAlert }) => {
+  const [posts, setPosts] = useState([])
 
   if (!user) {
     return <Redirect to='/' />
@@ -15,7 +14,7 @@ const IndexPosts = ({ user, msgAlert }) => {
     const getPosts = async () => {
       try {
         const response = await indexPost(user)
-        setPost(response.data.posts)
+        setPosts(response.data.posts)
       } catch (error) {
         // Alert the user, that they failed to sign up
         msgAlert({
@@ -25,9 +24,9 @@ const IndexPosts = ({ user, msgAlert }) => {
           variant: 'danger'
         })
       }
-      // if (!user) {
-      //   return <Navigate to='/' />
-      // }
+      if (!user) {
+        return <Redirect to='/' />
+      }
     }
     getPosts()
   }, [])
@@ -42,7 +41,8 @@ const IndexPosts = ({ user, msgAlert }) => {
   const postList = posts.map(post => (
     <li key={post._id}>
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
-      <h6>{post.text}</h6>
+      <h6>Whats on your mind🧠: {post.text}</h6>
+      <h6>Photo: {post.photo}</h6>
     </li>
   ))
 
@@ -56,24 +56,4 @@ const IndexPosts = ({ user, msgAlert }) => {
   )
 }
 
-//   const renderedMovies = movies.map(movie => {
-//     return (
-//       <li key={movie._id}>
-//         <Link to={`/movies/${movie._id}`}>
-//           <h6>{movie.title}</h6>
-//         </Link>
-//         <p>{movie.director}</p>
-//       </li>
-//     )
-//   })
-//   return (
-//     <>
-//       <h3>Movies:</h3>
-//       <ul>
-//         {renderedMovies}
-//       </ul>
-//     </>
-//   )
-// }
-
-export default IndexPosts
+export default Posts

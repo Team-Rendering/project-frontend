@@ -41,3 +41,15 @@ export const deletePost = (id, user) => {
     }
   })
 }
+
+export const updatePost = (id, title, text, photo, user) => {
+  return axios.patch(
+    `${apiUrl}/posts/${id}`,
+    { post: { title, text, photo } },
+    {
+      headers: {
+        Authorization: `Bearer ${user.token}`
+      }
+    }
+  )
+}

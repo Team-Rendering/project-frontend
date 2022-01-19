@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createPost } from '../../api/post'
-
-// Import MovieForm:
-
-// import { createMovie } from '../../api/movies'
 import PostForm from './PostForm'
 
-const PostCreate = ({ user, msgAlert }) => {
+const CreatePost = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [photo, setPhoto] = useState('')
@@ -59,4 +55,4 @@ const PostCreate = ({ user, msgAlert }) => {
   )
 }
 
-export default PostCreate
+export default CreatePost
