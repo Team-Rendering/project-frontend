@@ -1,9 +1,9 @@
 /* eslint-disable no-tabs */
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
-import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
+// import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
 import SignUp from './components/auth/SignUp'
@@ -12,10 +12,10 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
 import Home from './components/posts/Home'
-import CreatePost from './components/posts/CreatePost'
 import Posts from './components/posts/Posts'
 import PostEdit from './components/posts/PostEdit'
 import Post from './components/posts/Post'
+import PostCreate from './components/posts/PostCreate'
 
 class App extends Component {
   constructor (props) {
@@ -75,7 +75,7 @@ class App extends Component {
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
             )}
           />
-          <AuthenticatedRoute
+          <Route
             user={user}
             path='/sign-out'
             render={() => (
@@ -87,35 +87,39 @@ class App extends Component {
             )}
           />
           {/* <Route path='/posts/create' element={<CreatePost msgAlert={this.msgAlert} user={user} />} /> */}
-          <AuthenticatedRoute
+          <Route
             user={user}
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
             )}
           />
-          <AuthenticatedRoute
-            user={user}
-            path='/posts/:id'
-            render={() => (
-              <Post msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/posts/create'
-            render={() => (
-              <CreatePost msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/posts'
-            render={() => (
-              <Posts msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <AuthenticatedRoute
+          <Switch >
+
+            <Route
+              user={user}
+              path='/posts/create'
+              render={() => (
+                <PostCreate msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+            <Route
+              user={user}
+              path='/posts/:id'
+              render={() => (
+                <Post msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+            <Route
+              user={user}
+              path='/posts'
+              render={() => (
+                <Posts msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+
+          </Switch>
+          <Route
             user={user}
             path='/posts/:id/edit'
             render={() => (

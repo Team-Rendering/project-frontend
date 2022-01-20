@@ -24,9 +24,6 @@ const Posts = ({ user, msgAlert }) => {
           variant: 'danger'
         })
       }
-      if (!user) {
-        return <Redirect to='/' />
-      }
     }
     getPosts()
   }, [])
@@ -41,8 +38,8 @@ const Posts = ({ user, msgAlert }) => {
   const postList = posts.map(post => (
     <li key={post._id}>
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
-      <h6>Whats on your mind🧠: {post.text}</h6>
-      <h6>Photo: {post.photo}</h6>
+      {/* <h6>Whats on your mind🧠: {post.text}</h6>
+      <h6>Photo: {post.photo}</h6> */}
     </li>
   ))
 

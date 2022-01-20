@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { createPost } from '../../api/post'
 import PostForm from './PostForm'
 
-const CreatePost = ({ user, msgAlert }) => {
+const PostCreate = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [photo, setPhoto] = useState('')
@@ -55,4 +55,4 @@ const CreatePost = ({ user, msgAlert }) => {
   )
 }
 
-export default CreatePost
+export default PostCreate

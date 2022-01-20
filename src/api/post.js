@@ -3,7 +3,7 @@ import apiUrl from '../apiConfig'
 
 export const createPost = (title, text, photo, user) => {
   return axios.post(
-    `${apiUrl}/posts`,
+    `${apiUrl}/posts/`,
     { post: { title, text, photo } },
     // Pass along the authorization which includes our user's token
     {
