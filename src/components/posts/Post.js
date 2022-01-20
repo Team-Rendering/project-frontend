@@ -24,7 +24,7 @@ const Post = ({ user, msgAlert }) => {
         setPost(res.data.post)
       } catch (error) {
         msgAlert({
-          heading: 'Post failed to load this Post.js Error)',
+          heading: 'Post failed to load this is coming from (Post.js Error)',
           message: error.message,
           variant: 'danger'
         })
