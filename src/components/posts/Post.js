@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, Redirect, useParams } from 'react-router-dom'
 import { Spinner, Button } from 'react-bootstrap'
 import { deletePost, showPost } from '../../api/post'
+import './Post.css'
 
 const Post = ({ user, msgAlert }) => {
   const [post, setPost] = useState(null)
@@ -59,14 +60,14 @@ const Post = ({ user, msgAlert }) => {
   } else {
     // We have a post, display it!
     return (
-      <div className='row'>
-        <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='post'>
+        <div className='PostWrapper'>
           <h3>{post.title}</h3>
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
-          <Button variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
+          <Button className='Bttn' variant='primary' type='submit'>Update Post</Button>
           <Link to={`/posts/${id}/edit`}>
-            <Button variant='primary' type='submit'>Update Post</Button>
+            <Button className='Bttn' variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
           </Link>
         </div>
       </div>

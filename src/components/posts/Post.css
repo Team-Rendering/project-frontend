@@ -1,0 +1,17 @@
+.post {
+    width: 100%;
+	border-radius: 10px;
+	-webkit-box-shadow: 7px 9px 3px -2px rgba(0, 0, 0, 0.29);
+	box-shadow: 7px 9px 3px -2px rgba(0, 0, 0, 0.29);
+    margin: 30px 0;
+}
+
+.PostWrapper {
+    padding: 10px;
+}
+.Bttn {
+    justify-content: space-between;
+    position: relative;
+    margin-left: 50px;
+    align-items: center;
+}

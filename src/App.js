@@ -55,86 +55,89 @@ class App extends Component {
     return (
       <Fragment>
         <ParticlesBackground />
+        <div id='a'>
 	      <Header user={user} />
 	      {msgAlerts.map((msgAlert) => (
-          <AutoDismissAlert
-            key={msgAlert.id}
-            heading={msgAlert.heading}
-            variant={msgAlert.variant}
-            message={msgAlert.message}
-            id={msgAlert.id}
-            deleteAlert={this.deleteAlert}
-          />
-        ))}
-        <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+            <AutoDismissAlert
+              key={msgAlert.id}
+              heading={msgAlert.heading}
+              variant={msgAlert.variant}
+              message={msgAlert.message}
+              id={msgAlert.id}
+              deleteAlert={this.deleteAlert}
+            />
+          ))}
+          <Home msgAlert={this.msgAlert} setUser={this.setUser} />
 
 	      <main className='container'>
 
 	        <Route
-            path='/sign-up'
-            render={() => (
-              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-            )}
-          />
-          <Route
-            path='/sign-in'
-            render={() => (
+              path='/sign-up'
+              render={() => (
+                <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+              )}
+            />
+            <Route
+              path='/sign-in'
+              render={() => (
 
-              <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-            )}
-          />
-          <Route
-            user={user}
-            path='/sign-out'
-            render={() => (
-              <SignOut
-                msgAlert={this.msgAlert}
-                clearUser={this.clearUser}
+                <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+              )}
+            />
+            <Route
+              user={user}
+              path='/sign-out'
+              render={() => (
+                <SignOut
+                  msgAlert={this.msgAlert}
+                  clearUser={this.clearUser}
+                  user={user}
+                />
+              )}
+            />
+            {/* <Route path='/posts/create' element={<CreatePost msgAlert={this.msgAlert} user={user} />} /> */}
+            <Route
+              user={user}
+              path='/change-password'
+              render={() => (
+                <ChangePassword msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+            <Switch >
+
+              <Route
                 user={user}
+                path='/posts/create'
+                render={() => (
+                  <PostCreate msgAlert={this.msgAlert} user={user} />
+                )}
               />
-            )}
-          />
-          {/* <Route path='/posts/create' element={<CreatePost msgAlert={this.msgAlert} user={user} />} /> */}
-          <Route
-            user={user}
-            path='/change-password'
-            render={() => (
-              <ChangePassword msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <Switch >
+              <Route
+                user={user}
+                path='/posts/:id'
+                render={() => (
+                  <Post msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <Route
+                user={user}
+                path='/posts'
+                render={() => (
+                  <Posts msgAlert={this.msgAlert} user={user} />
+                )}
+              />
 
+            </Switch>
             <Route
               user={user}
-              path='/posts/create'
+              path='/posts/:id/edit'
               render={() => (
-                <PostCreate msgAlert={this.msgAlert} user={user} />
-              )}
-            />
-            <Route
-              user={user}
-              path='/posts/:id'
-              render={() => (
-                <Post msgAlert={this.msgAlert} user={user} />
-              )}
-            />
-            <Route
-              user={user}
-              path='/posts'
-              render={() => (
-                <Posts msgAlert={this.msgAlert} user={user} />
+                <PostEdit msgAlert={this.msgAlert} user={user} />
               )}
             />
 
-          </Switch>
-          <Route
-            user={user}
-            path='/posts/:id/edit'
-            render={() => (
-              <PostEdit msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-        </main>
+          </main>
+        </div>
       </Fragment>
 
     )
