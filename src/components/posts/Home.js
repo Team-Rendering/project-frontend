@@ -10,6 +10,7 @@ const Home = () => (
     {/* <signUp /> */}
     {/* <Link to='/sign-up'> Sign Up</Link>
     <Link to='/sign-in'> Sign In</Link> */}
+
   </>
 )
 

@@ -16,6 +16,8 @@ import Posts from './components/posts/Posts'
 import PostEdit from './components/posts/PostEdit'
 import Post from './components/posts/Post'
 import PostCreate from './components/posts/PostCreate'
+// import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
+// import Particles from 'react-tsparticles'
 
 class App extends Component {
   constructor (props) {
@@ -62,7 +64,9 @@ class App extends Component {
           />
         ))}
         <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+
 	      <main className='container'>
+
 	        <Route
             path='/sign-up'
             render={() => (
@@ -72,6 +76,7 @@ class App extends Component {
           <Route
             path='/sign-in'
             render={() => (
+
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
             )}
           />
@@ -128,6 +133,7 @@ class App extends Component {
           />
         </main>
       </Fragment>
+
     )
   }
 }
