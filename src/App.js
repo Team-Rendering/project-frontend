@@ -55,7 +55,7 @@ class App extends Component {
     return (
       <Fragment>
         <ParticlesBackground />
-        <div id='a'>
+        <div className='a'>
 	      <Header user={user} />
 	      {msgAlerts.map((msgAlert) => (
             <AutoDismissAlert

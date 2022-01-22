@@ -65,10 +65,10 @@ const Post = ({ user, msgAlert }) => {
           <h3>{post.title}</h3>
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
-          <Button className='Bttn' variant='primary' type='submit'>Update Post</Button>
           <Link to={`/posts/${id}/edit`}>
-            <Button className='Bttn' variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
+            <Button className='Bttn' variant='primary' type='submit'>Update Post</Button>
           </Link>
+          <Button className='Bttn' variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
         </div>
       </div>
     )
