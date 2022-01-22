@@ -16,6 +16,7 @@ import Posts from './components/posts/Posts'
 import PostEdit from './components/posts/PostEdit'
 import Post from './components/posts/Post'
 import PostCreate from './components/posts/PostCreate'
+import './app.css'
 // import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
 // import Particles from 'react-tsparticles'
 
