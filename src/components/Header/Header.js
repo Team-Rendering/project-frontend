@@ -2,14 +2,17 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
+import './header.css'
 
 const authenticatedOptions = (
+
   <Fragment>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
-    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
     <NavLink to='/posts/create' className='nav-link'>Make a Post</NavLink>
     <NavLink to='/posts' className='nav-link'>Posts</NavLink>
+    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
+    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>
+
 )
 
 const unauthenticatedOptions = (
@@ -26,15 +29,15 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg='primary' variant='dark' expand='md'>
+  <Navbar bg='primary' variant='dark' expand='md' >
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>OurSpace</Link>
+      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }} className='ml-auto'>OurSpace</Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
-      <Nav className='ml-auto'>
+      <Nav className='ms-auto justify-content-end' >
         {user && (
-          <span className='navbar-text mr-2'>Welcome, {user.email}</span>
+          <span className='navbar-text'>Welcome, {user.email}</span>
         )}
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
