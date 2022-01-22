@@ -17,6 +17,7 @@ import PostEdit from './components/posts/PostEdit'
 import Post from './components/posts/Post'
 import PostCreate from './components/posts/PostCreate'
 import './app.css'
+import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
 // import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
 // import Particles from 'react-tsparticles'
 
@@ -53,6 +54,7 @@ class App extends Component {
 
     return (
       <Fragment>
+        <ParticlesBackground />
 	      <Header user={user} />
 	      {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
