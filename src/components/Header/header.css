@@ -30,7 +30,3 @@ font-family: 'Roboto', sans-serif; */
   border-radius: 25px;
   mask-border-mode: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
 }
-
-.doorClosed, .makePost, .seePosts, .homeNav, .changePass {
-  font-size: 15px;
-}
