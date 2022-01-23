@@ -4,6 +4,7 @@ import { Spinner, Button } from 'react-bootstrap'
 import { deletePost, showPost } from '../../api/post'
 import { format } from 'timeago.js'
 import './Post.css'
+import { SendCheck, TrashFill } from 'react-bootstrap-icons'
 
 const Post = ({ user, msgAlert }) => {
   const [post, setPost] = useState(null)
@@ -69,9 +70,9 @@ const Post = ({ user, msgAlert }) => {
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
           <Link to={`/posts/${id}/edit`}>
-            <Button className='Bttn' variant='primary' type='submit'>Update Post</Button>
+            <Button className='Bttn' variant='primary' type='submit'>Update Post <SendCheck /></Button>
           </Link>
-          <Button className='Bttn' variant='danger' onClick={handleDeleteClick}>Delete Post</Button>
+          <Button className='Bttn' variant='danger' onClick={handleDeleteClick}>Delete Post <TrashFill /></Button>
         </div>
       </div>
     )

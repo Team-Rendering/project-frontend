@@ -3,29 +3,29 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 import './header.css'
-import { DoorClosedFill, FilePostFill } from 'react-bootstrap-icons'
+import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare, Signpost2Fill } from 'react-bootstrap-icons'
 
 const authenticatedOptions = (
 
   <Fragment>
-    <NavLink to='/posts/create' className='nav-link'><FilePostFill /></NavLink>
-    <NavLink to='/posts' className='nav-link'>Posts</NavLink>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
-    <NavLink to='/sign-out' className='nav-link doorClosed'><DoorClosedFill /></NavLink>
+    <NavLink to='/posts/create' className='nav-link makePost'>Make a Post <PencilSquare /></NavLink>
+    <NavLink to='/posts' className='nav-link seePosts '>Posts <Signpost2Fill /></NavLink>
+    <NavLink to='/change-password' className='nav-link changePass '>Change Password <GearFill /></NavLink>
+    <NavLink to='/sign-out' className='nav-link doorClosed'>Sign Out <DoorClosedFill /></NavLink>
   </Fragment>
 
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <NavLink to='/sign-up' className='nav-link'>Sign Up</NavLink>
-    <NavLink to='/sign-in' className='nav-link'>Sign In</NavLink>
+    <NavLink to='/sign-up' className='nav-link'>Sign Up <ArrowUp /></NavLink>
+    <NavLink to='/sign-in' className='nav-link'>Sign In <ArrowRight /></NavLink>
   </Fragment>
 )
 
 const alwaysOptions = (
   <Fragment>
-    <NavLink exact to='/' className='nav-link'>Home</NavLink>
+    <NavLink exact to='/' className='nav-link homeNav'>Home <HouseFill /></NavLink>
   </Fragment>
 )
 
