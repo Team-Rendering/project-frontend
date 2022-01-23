@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { SendCheck } from 'react-bootstrap-icons'
 
 const PostForm = ({ handleSubmit, title, text, photo, setTitle, setText, setPhoto }) => (
   <Form onSubmit={handleSubmit}>
@@ -32,7 +33,7 @@ const PostForm = ({ handleSubmit, title, text, photo, setTitle, setText, setPhot
         onChange={event => setPhoto(event.target.value)}
       />
     </Form.Group>
-    <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
+    <Button className='mt-2 Bttn' variant='primary' type='submit'>Submit <SendCheck /></Button>
   </Form>
 )
 export default PostForm

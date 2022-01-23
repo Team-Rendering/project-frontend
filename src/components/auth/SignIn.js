@@ -7,6 +7,7 @@ import { signInSuccess, signInFailure } from '../AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import './Login.css'
+import { ArrowReturnRight } from 'react-bootstrap-icons'
 
 class SignIn extends Component {
   constructor (props) {
@@ -87,7 +88,7 @@ render () {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button className='loginRegisterButton'variant='primary' type='submit'>Submit</Button>
+            <Button className='loginRegisterButton Bttn  'variant='primary' type='submit'>Submit <ArrowReturnRight /></Button>
           </Form>
         </div>
       </div>
