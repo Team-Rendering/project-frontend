@@ -24,6 +24,7 @@
     "react-scripts": "4.0.3",
     "react-tsparticles": "^1.39.0",
     "resolve": "^1.18.1",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

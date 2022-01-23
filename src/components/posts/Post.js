@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, Redirect, useParams } from 'react-router-dom'
 import { Spinner, Button } from 'react-bootstrap'
 import { deletePost, showPost } from '../../api/post'
+import { format } from 'timeago.js'
 import './Post.css'
 
 const Post = ({ user, msgAlert }) => {
@@ -63,6 +64,7 @@ const Post = ({ user, msgAlert }) => {
       <div className='post'>
         <div className='PostWrapper'>
           <h3>{post.title}</h3>
+          <span className='postDate'>{format(post.createdAt)}</span>
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
           <Link to={`/posts/${id}/edit`}>
