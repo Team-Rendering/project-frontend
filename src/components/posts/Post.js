@@ -63,8 +63,9 @@ const Post = ({ user, msgAlert }) => {
     return (
       <div className='post'>
         <div className='PostWrapper'>
-          <h3>{post.title}</h3>
-          <span className='postDate'>{format(post.createdAt)}</span>
+          <h3>{post.title}
+            <span className='postDate'>{format(post.createdAt)}</span>
+          </h3>
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
           <Link to={`/posts/${id}/edit`}>
