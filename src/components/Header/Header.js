@@ -3,14 +3,15 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 import './header.css'
+import { DoorClosedFill, FilePostFill } from 'react-bootstrap-icons'
 
 const authenticatedOptions = (
 
   <Fragment>
-    <NavLink to='/posts/create' className='nav-link'>Make a Post</NavLink>
+    <NavLink to='/posts/create' className='nav-link'><FilePostFill /></NavLink>
     <NavLink to='/posts' className='nav-link'>Posts</NavLink>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
-    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
+    <NavLink to='/sign-out' className='nav-link doorClosed'><DoorClosedFill /></NavLink>
   </Fragment>
 
 )
