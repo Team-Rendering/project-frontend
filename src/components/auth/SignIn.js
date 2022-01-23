@@ -6,6 +6,7 @@ import { signInSuccess, signInFailure } from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './Login.css'
 
 class SignIn extends Component {
   constructor (props) {
@@ -51,13 +52,20 @@ render () {
   const { email, password } = this.state
 
   return (
-    <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Sign In</h3>
-        <Form onSubmit={this.onSignIn}>
+    <div className='row mt-5'>
+      <div className='col-md-6'>
+        <div className='loginLeft'>
+          <h3 className='loginLogo'>OurSpace</h3>
+          <span className='loginDesc'>Connect with friends not around the world yet but soon!</span>
+        </div>
+      </div>
+      <div className='col-md-6 mt-5'>
+        <Form className='loginBox' onSubmit={this.onSignIn}>
+          <h3>Sign In</h3>
           <Form.Group controlId='email'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
+              className='loginInput'
               required
               type='email'
               name='email'
@@ -77,10 +85,11 @@ render () {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant='primary' type='submit'>Submit</Button>
+          <Button className='loginRegisterButton'variant='primary' type='submit'>Submit</Button>
         </Form>
       </div>
     </div>
+
   )
 }
 }

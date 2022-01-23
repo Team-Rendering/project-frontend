@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { indexPost } from '../../api/post'
 import { Link, Redirect } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
+import { format } from 'timeago.js'
 import './Posts.css'
 const Posts = ({ user, msgAlert }) => {
   const [posts, setPosts] = useState([])
@@ -38,7 +39,8 @@ const Posts = ({ user, msgAlert }) => {
   const postList = posts.map(post => (
     <div className='posts' key={post._id}>
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
-      <h6>Whats on your mind🧠: {post.text}</h6>
+      <span className='postDate'>{format(post.createdAt)}</span>
+      <h6>{post.text}</h6>
       <h6>Photo: {post.photo}</h6>
     </div>
   ))
