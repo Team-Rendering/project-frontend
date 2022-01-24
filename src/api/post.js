@@ -24,9 +24,19 @@ export const indexPost = (user) => {
     }
   )
 }
+export const indexUsersPost = (user) => {
+  return axios.get(
+    `${apiUrl}/posts/owner/`,
+    // Pass along the authorization which includes our user's token
+    {
+      headers: {
+        Authorization: `Bearer ${user.token}`
+      }
+    }
+  )
+}
 
-export const showPost = (id
-  , user) => {
+export const showPost = (id, user) => {
   return axios.get(`${apiUrl}/posts/${id}/`, {
     headers: {
       Authorization: `Bearer ${user.token}`

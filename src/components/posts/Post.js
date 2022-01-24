@@ -25,6 +25,7 @@ const Post = ({ user, msgAlert }) => {
       try {
         const res = await showPost(id, user)
         setPost(res.data.post)
+        console.log(user)
       } catch (error) {
         msgAlert({
           heading: 'Post failed to load this is coming from (Post.js Error)',
@@ -69,6 +70,7 @@ const Post = ({ user, msgAlert }) => {
           </h3>
           <p>You changed your mind?💭: {post.text}</p>
           <p>Upload Photo: {post.photo}</p>
+          <p>{post.owner}</p>
           <Link to={`/posts/${id}/edit`}>
             <Button className='Bttn' variant='primary' type='submit'>Update Post <SendCheck /></Button>
           </Link>

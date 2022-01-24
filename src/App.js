@@ -16,6 +16,7 @@ import Posts from './components/posts/Posts'
 import PostEdit from './components/posts/PostEdit'
 import Post from './components/posts/Post'
 import PostCreate from './components/posts/PostCreate'
+import OneUsersAllPosts from './components/posts/OneUsersAllPosts'
 import './app.css'
 import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
 // import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
@@ -56,8 +57,8 @@ class App extends Component {
       <Fragment>
         <ParticlesBackground />
         <div className='a'>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
+          <Header user={user} />
+          {msgAlerts.map((msgAlert) => (
             <AutoDismissAlert
               key={msgAlert.id}
               heading={msgAlert.heading}
@@ -67,18 +68,23 @@ class App extends Component {
               deleteAlert={this.deleteAlert}
             />
           ))}
-          <Home msgAlert={this.msgAlert} setUser={this.setUser} />
 
-	      <main className='container'>
+          <main className='container'>
+            <Route
+              exact path='/'
+              render={() => (
+                <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+              )}
+            />
 
-	        <Route
-              path='/sign-up'
+            <Route
+              exact path='/sign-up'
               render={() => (
                 <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
               )}
             />
             <Route
-              path='/sign-in'
+              exact path='/sign-in'
               render={() => (
 
                 <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -124,6 +130,13 @@ class App extends Component {
                 path='/posts'
                 render={() => (
                   <Posts msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <Route
+                user={user}
+                path='/posts/owner'
+                render={() => (
+                  <OneUsersAllPosts msgAlert={this.msgAlert} user={user} />
                 )}
               />
 

@@ -8,6 +8,7 @@ import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare,
 const authenticatedOptions = (
 
   <Fragment>
+    <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink>
     <NavLink to='/posts/create' className='nav-link makePost'>Make a Post <PencilSquare /></NavLink>
     <NavLink to='/posts' className='nav-link seePosts '>Posts <Signpost2Fill /></NavLink>
     <NavLink to='/change-password' className='nav-link changePass '>Change Password <GearFill /></NavLink>
@@ -25,7 +26,7 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <NavLink exact to='/' className='nav-link homeNav'>Home <HouseFill /></NavLink>
+    <NavLink to='/' className='nav-link homeNav'>Home <HouseFill /></NavLink>
   </Fragment>
 )
 
