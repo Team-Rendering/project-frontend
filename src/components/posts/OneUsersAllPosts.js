@@ -1,42 +1,42 @@
 import React, { useEffect, useState } from 'react'
-import { indexPost } from '../../api/post'
+import { indexUsersPost } from '../../api/post'
 import { Link, Redirect } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import { format } from 'timeago.js'
 import './Posts.css'
-const Posts = ({ user, msgAlert }) => {
-  const [posts, setPosts] = useState([])
+const OneUsersAllPosts = ({ user, msgAlert }) => {
+  const [usersPosts, setUsersPosts] = useState(null)
 
   if (!user) {
     return <Redirect to='/' />
   }
 
   useEffect(() => {
-    const getPosts = async () => {
+    const getAllPosts = async () => {
       try {
-        const response = await indexPost(user)
-        setPosts(response.data.posts)
+        const res = await indexUsersPost(user)
+        setUsersPosts(res.data.posts.owner)
       } catch (error) {
         // Alert the user, that they failed to sign up
         msgAlert({
-          heading: 'Post Cant be displayed: ' + error.message,
+          heading: 'Posts Cant be displayed: ' + error.message,
           message: 'Cant index Post',
           // this will be red
           variant: 'danger'
         })
       }
     }
-    getPosts()
+    getAllPosts()
   }, [])
 
-  if (posts.length === 0) {
+  if (usersPosts.length === 0) {
     return (
       <Spinner animation='border' role='status'>
         <span className='visually-hidden'>Loading...</span>
       </Spinner>
     )
   }
-  const postList = posts.map(post => (
+  const postList = usersPosts.map(post => (
     <div className='posts' key={post._id}>
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
       <span className='postDate'>{format(post.createdAt)}</span>
@@ -56,4 +56,4 @@ const Posts = ({ user, msgAlert }) => {
   )
 }
 
-export default Posts
+export default OneUsersAllPosts

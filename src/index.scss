@@ -1,7 +1,11 @@
-$primary: #fdc500;
-$secondary: #fdc500;
+$primary: #b68f03;
+$secondary: #c99e02;
 $info: #8f2d56;
 $danger: #ee6055;
 $success: #b3efb2;
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Noto+Sans+JP&family=Roboto&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Noto+Sans+JP&family=Roboto&display=swap');
+main{
+
+  font-family: 'Press Start 2P', cursive;
+}
