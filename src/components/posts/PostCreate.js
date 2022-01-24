@@ -39,7 +39,7 @@ const PostCreate = ({ user, msgAlert }) => {
   }
   return (
     <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='col-md-3 mx-auto mt-5'>
         <h3>Create Post</h3>
         <PostForm
           handleSubmit={handleSubmit}
@@ -51,6 +51,7 @@ const PostCreate = ({ user, msgAlert }) => {
           setPhoto={setPhoto}
         />
       </div>
+
     </div>
   )
 }

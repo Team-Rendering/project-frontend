@@ -8,10 +8,10 @@ font-family: 'Roboto', sans-serif; */
 }
 
 .logo {
-  font-family: 'Neonderthaw', cursive;
+  font-family: 'Press Start 2P', cursive;
   position: absolute;
   text-align: center;
-  font-size: 55px;
+  font-size: 45px;
   left: 2%;
   top: 1px;
   backdrop-filter: blur(20px);
