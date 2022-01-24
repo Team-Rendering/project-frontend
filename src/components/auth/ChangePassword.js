@@ -6,6 +6,7 @@ import { changePasswordSuccess, changePasswordFailure } from '../AutoDismissAler
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { SendCheck } from 'react-bootstrap-icons'
 
 class ChangePassword extends Component {
   constructor (props) {
@@ -76,7 +77,7 @@ render () {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant='primary' type='submit'>Submit</Button>
+          <Button className='Bttn' variant='primary' type='submit'>Submit <SendCheck /></Button>
         </Form>
       </div>
     </div>

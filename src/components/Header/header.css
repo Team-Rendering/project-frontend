@@ -1,0 +1,32 @@
+/* FONTS */
+/* font-family: 'Neonderthaw', cursive;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Roboto', sans-serif; */
+.navbar{
+  /* backdrop-filter: blur(10px); */
+  border: 2px solid rgba(255, 255, 255, 0.055);
+}
+
+.logo {
+  font-family: 'Neonderthaw', cursive;
+  position: absolute;
+  text-align: center;
+  font-size: 55px;
+  left: 2%;
+  top: 1px;
+  backdrop-filter: blur(20px);
+  padding: 5px 5px;
+
+
+  /* background: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 0%, 0.11)); */
+    /* height: 200px; */
+    /* margin-top: -200px; */
+    /* position: relative; */
+    /* width: 600px; */
+}
+
+.border-fade {
+  border: 2px solid rgba(255, 255, 255, 0.055);
+  border-radius: 25px;
+  mask-border-mode: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
