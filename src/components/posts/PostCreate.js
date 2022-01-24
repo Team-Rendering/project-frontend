@@ -6,16 +6,16 @@ import PostForm from './PostForm'
 const PostCreate = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
-  const [photo, setPhoto] = useState('')
+  const [feelings, setFeelings] = useState('')
   const [createdId, setCreatedId] = useState(null)
 
   const handleSubmit = async event => {
     event.preventDefault()
 
     try {
-      const res = await createPost(title, text, photo, user)
+      const res = await createPost(title, text, feelings, user)
       setCreatedId(res.data.post._id)
-
+      console.log(feelings)
       msgAlert({
         heading: 'Post Created',
         message: `Created ${title} successfully.`,
@@ -45,10 +45,10 @@ const PostCreate = ({ user, msgAlert }) => {
           handleSubmit={handleSubmit}
           title={title}
           text={text}
-          photo={photo}
+          feelings={+feelings}
           setTitle={setTitle}
           setText={setText}
-          setPhoto={setPhoto}
+          setFeelings={setFeelings}
         />
       </div>
 

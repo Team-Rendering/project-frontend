@@ -68,8 +68,12 @@ const Post = ({ user, msgAlert }) => {
           <h3>{post.title}
             <span className='postDate'>{format(post.createdAt)}</span>
           </h3>
-          <p>You changed your mind?💭: {post.text}</p>
-          <p>Upload Photo: {post.photo}</p>
+          <p>You changed your mind?💭 : {post.text}</p>
+          <p>Change your Feelings : {post.feelings === 1
+            ? '😋'
+            : post.feelings === 2
+              ? '😝'
+              : post.feelings === 3 ? '😐' : post.feelings === 4 ? '😖' : '😭'}</p>
           <p>{post.owner}</p>
           <Link to={`/posts/${id}/edit`}>
             <Button className='Bttn' variant='primary' type='submit'>Update Post <SendCheck /></Button>
