@@ -53,3 +53,14 @@ export const changePassword = (passwords, user) => {
     }
   })
 }
+export const indexUser = (user) => {
+  return axios.get(
+    `${apiUrl}/users/`,
+    // Pass along the authorization which includes our user's token
+    {
+      headers: {
+        Authorization: `Bearer ${user.token}`
+      }
+    }
+  )
+}

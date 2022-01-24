@@ -8,7 +8,8 @@ import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare,
 const authenticatedOptions = (
 
   <Fragment>
-    <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink>
+    {/* <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink> */}
+    <NavLink to='/users/' className='nav-link makePost'>See All Users <PencilSquare /></NavLink>
     <NavLink to='/posts/create' className='nav-link makePost'>Make a Post <PencilSquare /></NavLink>
     <NavLink to='/posts' className='nav-link seePosts '>Posts <Signpost2Fill /></NavLink>
     <NavLink to='/change-password' className='nav-link changePass '>Change Password <GearFill /></NavLink>
@@ -37,7 +38,7 @@ const Header = ({ user }) => (
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
-      <Nav className='ms-auto justify-content-end' >
+      <Nav className='ms-auto justify-content-center' >
         {user && (
           <span className='navbar-text'>Welcome, {user.email}</span>
         )}
