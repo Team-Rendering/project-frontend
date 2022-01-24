@@ -19,6 +19,7 @@ import PostCreate from './components/posts/PostCreate'
 import OneUsersAllPosts from './components/posts/OneUsersAllPosts'
 import './app.css'
 import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
+import AllUsers from './components/auth/IndexUsers'
 // import ParticlesBackground from './ParticlesBackground/ParticlesBackground'
 // import Particles from 'react-tsparticles'
 
@@ -111,6 +112,13 @@ class App extends Component {
             />
             <Switch >
 
+              <Route
+                user={user}
+                path='/users'
+                render={() => (
+                  <AllUsers msgAlert={this.msgAlert} user={user} />
+                )}
+              />
               <Route
                 user={user}
                 path='/posts/create'
