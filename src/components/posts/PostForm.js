@@ -34,6 +34,7 @@ const PostForm = ({ handleSubmit, title, text, photo, setTitle, setText, setPhot
       />
     </Form.Group>
     <Button className='mt-2 Bttn' variant='primary' type='submit'>Submit <SendCheck /></Button>
+    <div className='mt-5 footer' >Tell the world you onion</div>
   </Form>
 )
 export default PostForm

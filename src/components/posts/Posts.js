@@ -42,7 +42,7 @@ const Posts = ({ user, msgAlert }) => {
       <span className='postDate'>{format(post.createdAt)}</span>
       <h6>{post.text}</h6>
       <h6>Photo: {post.photo}</h6>
-      <h6>{post.owner}</h6>
+      <h6>User {post.owner} Post</h6>
     </div>
   ))
 
