@@ -3,12 +3,13 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 import './header.css'
-import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare, Signpost2Fill } from 'react-bootstrap-icons'
+import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare, PersonFill, PersonLinesFill, Signpost2Fill } from 'react-bootstrap-icons'
 
 const authenticatedOptions = (
 
   <Fragment>
-    <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink>
+    {/* <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink> */}
+    <NavLink to='/users/' className='nav-link makePost'>List of Users <PersonLinesFill /></NavLink>
     <NavLink to='/posts/create' className='nav-link makePost'>Make a Post <PencilSquare /></NavLink>
     <NavLink to='/posts' className='nav-link seePosts '>Posts <Signpost2Fill /></NavLink>
     <NavLink to='/change-password' className='nav-link changePass '>Change Password <GearFill /></NavLink>
@@ -37,9 +38,9 @@ const Header = ({ user }) => (
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
-      <Nav className='ms-auto justify-content-end' >
+      <Nav className='ms-auto justify-content-center' >
         {user && (
-          <span className='navbar-text'>Welcome, {user.email}</span>
+          <span className='navbar-text' style={{ color: '#FFF', textDecoration: 'none' }}> {user.email} <PersonFill /> </span>
         )}
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
