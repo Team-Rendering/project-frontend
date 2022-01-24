@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { SendCheck } from 'react-bootstrap-icons'
 
-const PostForm = ({ handleSubmit, title, text, photo, setTitle, setText, setPhoto }) => (
+const PostForm = ({ handleSubmit, title, text, feelings, setTitle, setText, setFeelings }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId='title'>
       <Form.Label>Title</Form.Label>
@@ -24,13 +24,13 @@ const PostForm = ({ handleSubmit, title, text, photo, setTitle, setText, setPhot
       />
     </Form.Group>
 
-    <Form.Group controlId='photo'>
-      <Form.Label>Upload Photo</Form.Label>
+    <Form.Group controlId='feelings'>
+      <Form.Label>How Ya Feeling?</Form.Label>
       <Form.Control
-        placeholder='Upload Photo'
-        name='photo'
-        value={photo}
-        onChange={event => setPhoto(event.target.value)}
+        placeholder='feelings 1-5'
+        name='feelings'
+        value={feelings}
+        onChange={event => setFeelings(event.target.value)}
       />
     </Form.Group>
     <Button className='mt-2 Bttn' variant='primary' type='submit'>Submit <SendCheck /></Button>

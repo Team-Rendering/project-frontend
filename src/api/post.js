@@ -1,10 +1,10 @@
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 
-export const createPost = (title, text, photo, user) => {
+export const createPost = (title, text, feelings, user) => {
   return axios.post(
     `${apiUrl}/posts/`,
-    { post: { title, text, photo } },
+    { post: { title, text, feelings } },
     // Pass along the authorization which includes our user's token
     {
       headers: {
@@ -52,10 +52,10 @@ export const deletePost = (id, user) => {
   })
 }
 
-export const updatePost = (id, title, text, photo, user) => {
+export const updatePost = (id, title, text, feelings, user) => {
   return axios.patch(
     `${apiUrl}/posts/${id}`,
-    { post: { title, text, photo } },
+    { post: { title, text, feelings } },
     {
       headers: {
         Authorization: `Bearer ${user.token}`
