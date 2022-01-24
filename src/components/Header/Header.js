@@ -40,7 +40,7 @@ const Header = ({ user }) => (
     <Navbar.Collapse id='basic-navbar-nav'>
       <Nav className='ms-auto justify-content-center' >
         {user && (
-          <Link className='navbar-text' style={{ color: '#FFF', textDecoration: 'none' }}> {user.email} <PersonFill /> </Link>
+          <span className='navbar-text' style={{ color: '#FFF', textDecoration: 'none' }}> {user.email} <PersonFill /> </span>
         )}
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
