@@ -14,7 +14,7 @@ const Home = () => (
       {/* <li><span>MySpace</span></li> */}
       <li><span>Meets YourSpace</span></li>
       <li><span>And Becomes</span></li>
-      <li><span>OurSpace 🤌🏽</span></li>
+      <li><span>🤌🏽 OurSpace 🤌🏽</span></li>
     </ul>
 
   </div>
