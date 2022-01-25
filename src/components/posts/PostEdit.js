@@ -7,7 +7,7 @@ import { showPost, updatePost } from '../../api/post'
 const PostEdit = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
-  const [photo, setPhoto] = useState('')
+  const [feelings, setFeelings] = useState('')
   const [updated, setUpdated] = useState(false)
   const { id } = useParams()
 
@@ -26,7 +26,7 @@ const PostEdit = ({ user, msgAlert }) => {
         const res = await showPost(id, user)
         setTitle(res.data.post.title)
         setText(res.data.post.text)
-        setPhoto(res.data.post.photo)
+        setFeelings(res.data.post.feelings)
       } catch (error) {
         msgAlert({
           heading: 'Failed to load post',
@@ -42,7 +42,7 @@ const PostEdit = ({ user, msgAlert }) => {
     event.preventDefault()
 
     try {
-      await updatePost(id, title, text, photo, user)
+      await updatePost(id, title, text, feelings, user)
       setUpdated(true)
     } catch (error) {
       msgAlert({
@@ -66,10 +66,10 @@ const PostEdit = ({ user, msgAlert }) => {
           handleSubmit={handleSubmit}
           title={title}
           text={text}
-          photo={photo}
+          feelings={+feelings}
           setTitle={setTitle}
           setText={setText}
-          setPhoto={setPhoto}
+          setFeelings={setFeelings}
         />
       </div>
     </div>

@@ -3,12 +3,12 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 import './header.css'
-import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare, PersonFill, PersonLinesFill, Signpost2Fill } from 'react-bootstrap-icons'
+import { ArrowRight, ArrowUp, DoorClosedFill, GearFill, HouseFill, PencilSquare, PersonFill, PersonLinesFill, PersonWorkspace, Signpost2Fill } from 'react-bootstrap-icons'
 
 const authenticatedOptions = (
 
   <Fragment>
-    {/* <NavLink to='/posts/owner' className='nav-link oneUsersAllPost'>See Your Posts <PencilSquare /></NavLink> */}
+    <NavLink to='/posts/owner' className='nav-link OneUsersAllPosts'>See Your Posts <PersonWorkspace /></NavLink>
     <NavLink to='/users/' className='nav-link makePost'>List of Users <PersonLinesFill /></NavLink>
     <NavLink to='/posts/create' className='nav-link makePost'>Make a Post <PencilSquare /></NavLink>
     <NavLink to='/posts' className='nav-link seePosts '>Posts <Signpost2Fill /></NavLink>
