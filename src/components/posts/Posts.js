@@ -41,7 +41,7 @@ const Posts = ({ user, msgAlert }) => {
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
       <span className='postDate'>{format(post.createdAt)}</span>
       <h6>{post.text}</h6>
-      <h6>How your feeling: {post.feelings === 1
+      <h6>Feelings scale 1-5: {post.feelings === 1
         ? '😋'
         : post.feelings === 2
           ? '😝'
