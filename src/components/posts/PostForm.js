@@ -25,7 +25,7 @@ const PostForm = ({ handleSubmit, title, text, feelings, setTitle, setText, setF
     </Form.Group>
 
     <Form.Group controlId='feelings'>
-      <Form.Label>How Ya Feeling?</Form.Label>
+      <Form.Label>Feelings Scale 1-5</Form.Label>
       <Form.Control
         placeholder='feelings 1-5'
         name='feelings'

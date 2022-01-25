@@ -7,18 +7,16 @@ import './Home.css'
 
 const Home = () => (
 
-  <>
+  <div className="txtwrapper">
+    <div className="static-txt">The Place Where</div>
+    <ul className="dynamic-txts">
+      <li><span>MySpace</span></li>
+      <li><span>Meets YourSpace</span></li>
+      <li><span>And Becomes</span></li>
+      <li><span>OurSpace 🤌🏽</span></li>
+    </ul>
 
-    <h1>Where Your Space </h1>
-
-    <h1>Becomes My Space </h1>
-
-    <h1>Then Meets OurSpace </h1>
-
-    {/* <signUp /> */}
-    {/* <Link to='/sign-up'> Sign Up</Link>
-    <Link to='/sign-in'> Sign In</Link> */}
-  </>
+  </div>
 
 )
 
