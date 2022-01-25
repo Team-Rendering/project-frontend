@@ -8,12 +8,13 @@ import './Home.css'
 const Home = () => (
 
   <div className="txtwrapper">
-    <div className="static-txt">The Place Where</div>
+    <div className="static-txt"></div>
     <ul className="dynamic-txts">
-      <li><span>MySpace</span></li>
+      <li><span>The Place Where MySpace</span></li>
+      {/* <li><span>MySpace</span></li> */}
       <li><span>Meets YourSpace</span></li>
       <li><span>And Becomes</span></li>
-      <li><span>OurSpace 🤌🏽</span></li>
+      <li><span>🤌🏽 OurSpace 🤌🏽</span></li>
     </ul>
 
   </div>
