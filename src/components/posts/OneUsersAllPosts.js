@@ -5,7 +5,7 @@ import { Spinner } from 'react-bootstrap'
 import { format } from 'timeago.js'
 import './Posts.css'
 const OneUsersAllPosts = ({ user, msgAlert }) => {
-  const [usersPosts, setUsersPosts] = useState(null)
+  const [usersPosts, setUsersPosts] = useState([])
 
   if (!user) {
     return <Redirect to='/' />
@@ -15,7 +15,7 @@ const OneUsersAllPosts = ({ user, msgAlert }) => {
     const getAllPosts = async () => {
       try {
         const res = await indexUsersPost(user)
-        setUsersPosts(res.data.posts.owner)
+        setUsersPosts(res.data.posts)
       } catch (error) {
         // Alert the user, that they failed to sign up
         msgAlert({
@@ -29,7 +29,7 @@ const OneUsersAllPosts = ({ user, msgAlert }) => {
     getAllPosts()
   }, [])
 
-  if (usersPosts.length === 0) {
+  if (!usersPosts.length) {
     return (
       <Spinner animation='border' role='status'>
         <span className='visually-hidden'>Loading...</span>
