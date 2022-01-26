@@ -41,7 +41,7 @@ const OneUsersAllPosts = ({ user, msgAlert }) => {
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
       <span className='postDate'>{format(post.createdAt)}</span>
       <h6>{post.text}</h6>
-      <h6>Photo: {post.photo}</h6>
+      <h6>Feelings: {post.feelings}</h6>
       <h6>{post.owner}</h6>
     </div>
   ))
