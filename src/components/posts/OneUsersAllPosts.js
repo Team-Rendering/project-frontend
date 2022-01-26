@@ -41,7 +41,11 @@ const OneUsersAllPosts = ({ user, msgAlert }) => {
       <Link to={`/posts/${post._id}`}>{post.title}</Link>
       <span className='postDate'>{format(post.createdAt)}</span>
       <h6>{post.text}</h6>
-      <h6>Feelings: {post.feelings}</h6>
+      <h6>Feelings: {post.feelings === 1
+        ? '😋'
+        : post.feelings === 2
+          ? '😝'
+          : post.feelings === 3 ? '😐' : post.feelings === 4 ? '😖' : '😭'}</h6>
       <h6>{post.owner}</h6>
     </div>
   ))
