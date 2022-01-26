@@ -128,6 +128,13 @@ class App extends Component {
               />
               <Route
                 user={user}
+                path='/posts/owner'
+                render={() => (
+                  <OneUsersAllPosts msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <Route
+                user={user}
                 path='/posts/:id'
                 render={() => (
                   <Post msgAlert={this.msgAlert} user={user} />
@@ -138,13 +145,6 @@ class App extends Component {
                 path='/posts'
                 render={() => (
                   <Posts msgAlert={this.msgAlert} user={user} />
-                )}
-              />
-              <Route
-                user={user}
-                path='/posts/owner'
-                render={() => (
-                  <OneUsersAllPosts msgAlert={this.msgAlert} user={user} />
                 )}
               />
 
