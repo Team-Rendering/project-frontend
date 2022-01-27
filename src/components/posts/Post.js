@@ -25,7 +25,7 @@ const Post = ({ user, msgAlert }) => {
       try {
         const res = await showPost(id, user)
         setPost(res.data.post)
-        console.log(user)
+        // console.log(user)
       } catch (error) {
         msgAlert({
           heading: 'Post failed to load this is coming from (Post.js Error)',
